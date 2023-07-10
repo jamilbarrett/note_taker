@@ -1,3 +1,5 @@
+
+// Required packages
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
@@ -5,9 +7,11 @@ const app = express();
 const { v4: uuidv4 } = require('uuid');
 const PORT = 3001;
 
+// Middleware
 app.use(express.static('./public'));
 app.use(express.json());
 
+// Route Paths
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
 });
